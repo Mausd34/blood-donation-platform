@@ -1,25 +1,30 @@
 # Blood Donation Platform
 
-Professional blood donor and emergency request matching platform.
+A privacy-conscious donor discovery and emergency blood-request platform with blood-group and city matching.
 
 ## Features
-- Donor registration and blood-group profiles
-- Emergency blood requests
-- City and blood-group matching
-- Availability/status workflow
-- REST API with validation
-- Privacy-conscious contact workflow
+- Donor registration and availability
+- Blood-group and city filtering
+- Emergency request workflow
+- Operations dashboard-ready API
+- Browser donor search at `/`
+- Swagger/OpenAPI at `/docs`
+- Automated API tests
+- Docker-ready deployment
 
 ## Stack
 Python · FastAPI · Pydantic · Docker
 
-## Quick start
+## Run locally
 ```bash
 python -m venv .venv
-# Windows: .venv\Scripts\activate
+.venv\Scripts\activate
 pip install -r requirements.txt
 uvicorn api:app --reload
 ```
-Open `http://127.0.0.1:8000/docs`.
+Open `http://127.0.0.1:8000/`.
 
-> Demo system. Always verify donor availability and medical eligibility through authorized channels.
+## Core API
+`POST /donors`, `GET /donors`, `POST /requests`, `GET /requests`, and `GET /dashboard`.
+
+> Demo system. Verify donor availability, eligibility, identity, and medical suitability through authorized healthcare channels. Avoid exposing donor contact information publicly.
